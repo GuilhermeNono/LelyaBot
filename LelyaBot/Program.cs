@@ -1,6 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using DotNetEnv;
 
-using LelyaBot;
-
-var bot = new Bot();
+Env.Load();
+var bot = new Bot.Bot();
 bot.RunAsync().GetAwaiter().GetResult();

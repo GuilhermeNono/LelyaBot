@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LelyaBot", "LelyaBot\LelyaBot.csproj", "{DB95E48F-6DF4-4DBC-B88C-94954FC8EB78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commands", "Commands\Commands.csproj", "{9C87990C-C108-460F-9FC1-C3164886F91C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{DB95E48F-6DF4-4DBC-B88C-94954FC8EB78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB95E48F-6DF4-4DBC-B88C-94954FC8EB78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB95E48F-6DF4-4DBC-B88C-94954FC8EB78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C87990C-C108-460F-9FC1-C3164886F91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C87990C-C108-460F-9FC1-C3164886F91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C87990C-C108-460F-9FC1-C3164886F91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C87990C-C108-460F-9FC1-C3164886F91C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

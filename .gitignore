@@ -1,5 +1,6 @@
 bin/
 obj/
 /packages/
+LelyaBot/.env
 riderModule.iml
 /_ReSharper.Caches/

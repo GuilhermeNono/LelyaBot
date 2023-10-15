@@ -1,9 +1,15 @@
 using Newtonsoft.Json;
 
-namespace LelyaBot;
+namespace Bot;
 
-internal struct ConfigJson
-{   
+internal struct Config
+{
+    public Config(string token, string prefix)
+    {
+        Token = token;
+        Prefix = prefix;
+    }
+
     [JsonProperty("token")] public string Token { get; private set; }
     [JsonProperty("prefix")] public string Prefix { get; private set; }
 }
