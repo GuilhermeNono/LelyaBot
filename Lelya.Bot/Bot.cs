@@ -10,6 +10,9 @@ using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Enums;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
+using Lelya.Infra;
+using Lelya.Infra.Core.Teste;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Bot;
 
@@ -82,13 +85,17 @@ public class Bot
 
     private void ConfigureCommands(Config config)
     {
+        var services = new ServiceCollection().AddDependencyInjection().BuildServiceProvider();
+        
         var commandsConfig = new CommandsNextConfiguration()
         {
             StringPrefixes = new string[] { config.Prefix },
             EnableMentionPrefix = true,
             EnableDms = false,
-            EnableDefaultHelp = false
+            EnableDefaultHelp = false,
+            Services = services
         };
+        
 
         RegisterChatCommands(commandsConfig);
         RegisterSlashCommands();

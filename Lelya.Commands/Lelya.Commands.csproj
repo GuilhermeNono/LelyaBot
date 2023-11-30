@@ -15,6 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Lelya.Infra\Lelya.Infra.csproj" />
       <ProjectReference Include="..\Lelya.Utils\Lelya.Utils.csproj" />
     </ItemGroup>
 

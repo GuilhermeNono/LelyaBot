@@ -4,17 +4,27 @@ using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
+using Lelya.Domain.Core;
+using Lelya.Infra;
 using Lelya.Utils.Template;
 
 namespace Commands.Util;
 
+[ModuleLifespan(ModuleLifespan.Transient)]
 public class Help : BaseCommandModule
 {
 
+    private readonly ITest _teste;
+    
     private DiscordEmoji? _previousEmoji;
     private DiscordEmoji? _nextEmoji;
     private int _currentPosition = 0;
     private int _lastPosition = 0;
+
+    public Help(ITest teste)
+    {
+        _teste = teste;
+    }
 
     [Command("help")]
     [Cooldown(5, 10, CooldownBucketType.User)]
@@ -23,6 +33,8 @@ public class Help : BaseCommandModule
         InitProp(ctx);
         var embedHelpMessage = LelyaEmbedTemplate.HelpPages().ToList();
         var loop = true;
+        
+        _teste.InjectionTest();
         
         var interactivity = ctx.Client.GetInteractivity();
         

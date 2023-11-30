@@ -19,3 +19,19 @@ F
 Lelya.Events/Class1.cs,7\e\7ef5d077e5b7c151b83b3076c22fd5899386172f
 Z
 *Lelya.Utils/Template/LelyaEmbedTemplate.cs,2\a\2a13f256f39a5afc16eb0588ca1a960b0043c659
+C
+Lelya.Bot/ITeste.cs,1\c\1c4b9ff44e8b35c3b37e7a93db38a7b40ca3d94d
+B
+Lelya.Bot/Teste.cs,a\1\a1fb565d9da933a2bf8647c7d2c77db687501813
+E
+Lelya.Infra/ITeste.cs,d\8\d85d246ca0330f761f335420c4ff66c1304c2adf
+D
+Lelya.Infra/Teste.cs,8\7\8741065dbf31d290f5544ab928ce7f87b0892e04
+K
+Lelya.Domain/Core/ITeste.cs,d\1\d13dc4ab1d70d8739d7b8886628fe8c497464aca
+J
+Lelya.Domain/Core/ITest.cs,2\6\26d5a92e1119f3af5466efac2203f596454e8eac
+O
+Lelya.Infra/Core/Teste/Teste.cs,0\3\03e29d78adc42474345996904ce8dfe955acdea4
+R
+"Lelya.Infra/DependencyInjection.cs,6\1\61197f552e66c72aa07ddf7c94d4151a218994cb
