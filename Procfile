@@ -1,1 +1,1 @@
-worker: dotnet run --project .\Lelya.Bot\
+worker: export DOTNET_ROOT=/usr/share/dotnet/ && export PATH=$PATH:$DOTNET_ROOT && dotnet run --project .\Lelya.Bot\
