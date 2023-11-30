@@ -1,22 +1,6 @@
 
-C
-LelyaBot/Program.cs,0\6\065443db0e45df102d6213e6980e07d96b7eea61
-B
-LelyaBot/Config.cs,e\3\e3fb6a77e60240f32e03ae10d29652773f248228
-D
-LelyaBot/.envExample,4\c\4c39a4635116842febf37b0186d1b720cfba7d90
-F
-LelyaBot/Client/Bot.cs,b\9\b942b5355d1c42ee8d3ff35c74b08db22c28327b
-O
-Commands/SlashCommands/FunSL.cs,1\1\119ef7aece2653e48ba32ca87fad893abc707e0c
-P
- Commands/Commands/FunCommands.cs,5\4\545c63056312220ba822f9d8ccf7c370f2ed7d79
 <
 LelyaBot.sln,b\6\b676c728b3d0ccf4c070e13c1c79c969d02590f2
-H
-Commands/Commands.csproj,b\4\b446a269f8c8ce19e2a4e698324f553cc0227d8d
-V
-&Lelya.Commands/Commands/FunCommands.cs,0\e\0e22e75e2695cf1c81b9e2db2dc5f5b851e6153b
 U
 %Lelya.Commands/SlashCommands/FunSL.cs,f\2\f2a00368ae21d5ce06ce2bebbae94cb7a5492087
 T
@@ -25,19 +9,11 @@ D
 Lelya.Bot/Program.cs,7\a\7a75cf91d1ea58ecf958624fd9cb9828f7caf351
 C
 Lelya.Bot/Config.cs,6\3\63970d07cc7ed4a13b5802f309ab103ea71a88cf
-G
-Lelya.Bot/Client/Bot.cs,c\5\c51d239ced687e1985f1331a69415014759a9491
-E
-Lelya.Bot/.envExample,c\c\ccb563848b9f4901ee68682ee6fda3db52e5400d
 @
 Lelya.Bot/Bot.cs,e\5\e59488d461a23a9c453ecc4d79539b5e22eecd7f
-R
-"Lelya.Commands/Help/HelpCommand.cs,e\6\e63bb59c78c691691294089cd17f30b3af9cb61c
 K
 Lelya.Commands/Util/Help.cs,0\e\0eb7de9669440439973aab2669cac9f91acb0c13
 Q
 !Lelya.Commands/Fun/FunCommands.cs,7\7\774a8d5a5a4fb0bef188767605ced421b0e9ceec
 F
 Lelya.Events/Class1.cs,7\e\7ef5d077e5b7c151b83b3076c22fd5899386172f
->
-Lelya.Bot/.env,9\3\937abbb64320b257e7e4fc2550a8a7398f23eb52

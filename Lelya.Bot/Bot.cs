@@ -61,9 +61,9 @@ public class Bot
 
     private Config ConfigureBot()
     {
-        var token = Environment.GetEnvironmentVariable("TOKEN") 
+        var token = Environment.GetEnvironmentVariable("LELYA_TOKEN") 
                     ?? throw new Exception("É necessario informar um token")!;
-        var prefix = Environment.GetEnvironmentVariable("PREFIX")
+        var prefix = Environment.GetEnvironmentVariable("LELYA_PREFIX")
             ?? throw new Exception("É necessario informar um prefixo")!;
 
         var config = new Config(token, prefix);
