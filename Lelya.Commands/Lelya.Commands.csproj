@@ -14,4 +14,8 @@
       <PackageReference Include="DSharpPlus.SlashCommands" Version="5.0.0-nightly-01903" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Lelya.Utils\Lelya.Utils.csproj" />
+    </ItemGroup>
+
 </Project>

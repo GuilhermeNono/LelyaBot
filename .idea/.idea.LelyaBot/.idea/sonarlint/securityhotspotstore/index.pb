@@ -17,3 +17,5 @@ Q
 !Lelya.Commands/Fun/FunCommands.cs,7\7\774a8d5a5a4fb0bef188767605ced421b0e9ceec
 F
 Lelya.Events/Class1.cs,7\e\7ef5d077e5b7c151b83b3076c22fd5899386172f
+Z
+*Lelya.Utils/Template/LelyaEmbedTemplate.cs,2\a\2a13f256f39a5afc16eb0588ca1a960b0043c659

@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lelya.Commands", "Lelya.Com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lelya.Events", "Lelya.Events\Lelya.Events.csproj", "{789F8EDC-C053-4DA4-ACAB-832BA68404F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lelya.Utils", "Lelya.Utils\Lelya.Utils.csproj", "{9831B2AB-24FC-4CAE-B74B-47340F798D5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{789F8EDC-C053-4DA4-ACAB-832BA68404F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{789F8EDC-C053-4DA4-ACAB-832BA68404F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{789F8EDC-C053-4DA4-ACAB-832BA68404F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9831B2AB-24FC-4CAE-B74B-47340F798D5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9831B2AB-24FC-4CAE-B74B-47340F798D5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9831B2AB-24FC-4CAE-B74B-47340F798D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9831B2AB-24FC-4CAE-B74B-47340F798D5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
