@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Commands</RootNamespace>
+        <LangVersion>12</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="DSharpPlus.CommandsNext" Version="5.0.0-nightly-01903" />
+      <PackageReference Include="DSharpPlus.Interactivity" Version="5.0.0-nightly-01903" />
+      <PackageReference Include="DSharpPlus.SlashCommands" Version="5.0.0-nightly-01903" />
+    </ItemGroup>
+
+</Project>
