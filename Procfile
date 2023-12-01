@@ -1,1 +1,0 @@
-worker: out/Bot.exe
