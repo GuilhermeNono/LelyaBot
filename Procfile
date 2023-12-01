@@ -1,1 +1,1 @@
-worker: dotnet run --project .\Lelya.Bot\
+worker: out/Bot.exe
