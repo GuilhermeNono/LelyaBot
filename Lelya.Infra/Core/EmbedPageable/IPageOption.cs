@@ -6,8 +6,6 @@ public interface IPageOption
 {
     public IPaginationEmoji Emojis { get; set; }
     public int CurrentPage { get; set; }
-    // public int LastPage { get; set; }
-    // public int NextPage { get; set; }
     public DiscordEmoji NextEmoji();
     public bool IsChangePage();
     public DiscordEmoji PreviousEmoji();

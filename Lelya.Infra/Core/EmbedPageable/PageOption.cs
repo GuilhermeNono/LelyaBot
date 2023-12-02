@@ -4,9 +4,9 @@ namespace Lelya.Infra.Core.EmbedPageable;
 
 public class PageOption : IPageOption
 {
-    public int CurrentPage { get; set; }
-    private int LastPage { get; set; }
-    private int NextPage { get; set; }
+    public int CurrentPage { get; set; } = 1;
+    private int LastPage { get; set; } = 1;
+    private int NextPage { get; set; } = 2;
     private int TotalPages { get; set; }
     public IPaginationEmoji Emojis { get; set; }
 
@@ -56,8 +56,8 @@ public class PageOption : IPageOption
 
     public int UpdateToNextPage()
     {
-        LastPage = CurrentPage;
         CurrentPage += 1;
+        LastPage = CurrentPage - 1;
         NextPage = CurrentPage + 1;
 
         Validations();
@@ -67,9 +67,10 @@ public class PageOption : IPageOption
 
     public int UpdateToPreviousPage()
     {
-        LastPage = CurrentPage - 1;
+        LastPage = CurrentPage;
         NextPage = CurrentPage;
         CurrentPage -= 1;
+
 
         Validations();
 
@@ -78,13 +79,18 @@ public class PageOption : IPageOption
 
     private void Validations()
     {
-        if (CurrentPage == TotalPages)
+        if (CurrentPage > TotalPages)
             CurrentPage = TotalPages;
 
         if (NextPage > TotalPages)
             NextPage = TotalPages;
 
-        if (LastPage < 0)
-            LastPage = 0;
+        if (LastPage <= 0)
+            LastPage = 1;
+
+        if (CurrentPage > 0) return;
+        
+        CurrentPage = 1;
+        NextPage = CurrentPage + 1;
     }
 }

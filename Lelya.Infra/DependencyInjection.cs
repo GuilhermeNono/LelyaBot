@@ -8,7 +8,7 @@ public static class DependencyInjection
     public static IServiceCollection AddDependencyInjection(this IServiceCollection services)
     {
         services.AddScoped<IPageOption, PageOption>();
-        services.AddScoped<IPageEmbed, PageEmbed>();
+        services.AddScoped<IPageableEmbed, PageableEmbed>();
         services.AddScoped<IPaginationEmoji, PaginationEmoji>();
         return services;
     } 

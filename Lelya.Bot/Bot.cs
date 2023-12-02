@@ -28,6 +28,7 @@ public class Bot
         Client?.UseInteractivity(new InteractivityConfiguration()
         {
             PollBehaviour = PollBehaviour.KeepEmojis,
+            PaginationEmojis = new PaginationEmojis(),
             Timeout = TimeSpan.FromMinutes(2)
         });
 
