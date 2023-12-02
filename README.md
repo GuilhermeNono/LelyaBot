@@ -1,15 +1,15 @@
-# 📚LelyaBot📚
+# 🐈‍⬛LelyaBot🐈‍⬛
 ![Lelya workflow](https://github.com/GuilhermeNono/LelyaBot/actions/workflows/dotnet-desktop.yml/badge.svg)
 ## 📖 Description 
-<p>Bot para servidores no discord desenvolvido em C#, .Net 8 e DSharpPlus.</p>
+<p>Bot for Discord servers developed in C#, .Net 8 and DSharpPlus.</p>
 
 ##
 
 ### 📓 To-do list
 
-- [x] Desenvolver um workflow para o repositório
-- [x] Implementar o Bot em algum ambiente em nuvem
-- [ ] Desenvovler todos os comandos basicos no bot
+- [x] Develop a workflow for the repository
+- [x] Implement the Bot in a cloud environment
+- [ ] Develop all basic commands in the bot
 
 ### 🗜️ Functionalities
 
