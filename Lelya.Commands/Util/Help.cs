@@ -4,8 +4,7 @@ using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
-using Lelya.Domain.Core;
-using Lelya.Infra;
+using Lelya.Infra.Core.EmbedPageable;
 using Lelya.Utils.Template;
 
 namespace Commands.Util;
@@ -14,85 +13,66 @@ namespace Commands.Util;
 public class Help : BaseCommandModule
 {
 
-    private readonly ITest _teste;
-    
-    private DiscordEmoji? _previousEmoji;
-    private DiscordEmoji? _nextEmoji;
-    private int _currentPosition = 0;
-    private int _lastPosition = 0;
+    private readonly IPageEmbed _embedPagination;
 
-    public Help(ITest teste)
+    public Help(IPageEmbed embedPagination)
     {
-        _teste = teste;
+        _embedPagination = embedPagination;
     }
 
+
     [Command("help")]
-    [Cooldown(5, 10, CooldownBucketType.User)]
+    [Cooldown(5, 10, CooldownBucketType.Global)]
     public async Task HelpCommand(CommandContext ctx)
     {
-        InitProp(ctx);
-        var embedHelpMessage = LelyaEmbedTemplate.HelpPages().ToList();
         var loop = true;
         
-        _teste.InjectionTest();
+        foreach (var embed in LelyaEmbedTemplate.HelpPages().ToList())
+        {
+            _embedPagination.AddEmbedContent(embed);
+        }
         
         var interactivity = ctx.Client.GetInteractivity();
         
-        var message = await ctx.RespondAsync(embedHelpMessage[0]);
+        var message = await ctx.RespondAsync(_embedPagination.GetEmbedContent().First());
 
-        await message.CreateReactionAsync(_previousEmoji);
-        await message.CreateReactionAsync(_nextEmoji);
+        await message.CreateReactionAsync(_embedPagination.PreviousPageEmoji());
+        await message.CreateReactionAsync(_embedPagination.NextPageEmoji());
 
         //TODO 30-11-2023 | 10:40: Desenvolver classe responsavel por criar uma paginação para o help
 
         while (loop)
         {
             var result = await interactivity.WaitForReactionAsync(x =>
-                    x.Emoji == _previousEmoji ||
-                    x.Emoji == _nextEmoji,
+                    x.Emoji == _embedPagination.PreviousPageEmoji() ||
+                    x.Emoji == _embedPagination.NextPageEmoji(),
                 ctx.User,
                 TimeSpan.FromSeconds(5)
             );
 
-            if (result.Result.Emoji == _previousEmoji)
+            if (result.Result.Emoji == _embedPagination.PreviousPageEmoji())
                 await UpdatePreviousEmbedPosition(result);
 
-            if (result.Result.Emoji == _nextEmoji)
-                await UpdateNextEmbedPosition(embedHelpMessage, result);
+            if (result.Result.Emoji == _embedPagination.NextPageEmoji())
+                await UpdateNextEmbedPosition(result);
             
-            if (_lastPosition != _currentPosition)
-                await message.ModifyAsync(embedHelpMessage.ElementAtOrDefault(_currentPosition)!);
+            if (_embedPagination.IsChangePage())
+                await message.ModifyAsync(_embedPagination.GetCurrentEmbed());
 
             if (result.TimedOut)
                 loop = false;
         }
     }
-
-    private void InitProp(CommandContext ctx)
+    
+    private async Task UpdateNextEmbedPosition(InteractivityResult<MessageReactionAddEventArgs> interactivityResult)
     {
-        _previousEmoji = DiscordEmoji.FromName(ctx.Client, ":track_previous:");
-        _nextEmoji = DiscordEmoji.FromName(ctx.Client, ":track_next:");
-    }
-
-    private async Task UpdateNextEmbedPosition(IList<DiscordMessageBuilder> embedHelpMessage, InteractivityResult<MessageReactionAddEventArgs> interactivityResult)
-    {
-        if (embedHelpMessage.Count - 1 != _currentPosition)
-        {
-            _lastPosition = _currentPosition;
-            _currentPosition += 1;
-        }
-
-        await interactivityResult.Result.Message.DeleteReactionAsync(_nextEmoji, interactivityResult.Result.User);
+        _embedPagination.NextPage();
+        await interactivityResult.Result.Message.DeleteReactionAsync(_embedPagination.NextPageEmoji(), interactivityResult.Result.User);
     } 
     
     private async Task UpdatePreviousEmbedPosition(InteractivityResult<MessageReactionAddEventArgs> interactivityResult)
     {
-        if (_currentPosition != 0)
-        {
-            _lastPosition = _currentPosition;
-            _currentPosition -= 1;
-        }
-
-        await interactivityResult.Result.Message.DeleteReactionAsync(_previousEmoji, interactivityResult.Result.User);
+        _embedPagination.PreviousPage();
+        await interactivityResult.Result.Message.DeleteReactionAsync(_embedPagination.PreviousPageEmoji(), interactivityResult.Result.User);
     }
 }
