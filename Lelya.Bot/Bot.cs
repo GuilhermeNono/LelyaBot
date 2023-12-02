@@ -1,6 +1,7 @@
 using System.Reflection;
 using Commands.Fun;
 using Commands.SlashCommands;
+using Commands.Util;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
@@ -11,7 +12,6 @@ using DSharpPlus.Interactivity.Enums;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
 using Lelya.Infra;
-using Lelya.Infra.Core.Teste;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Bot;
@@ -28,6 +28,7 @@ public class Bot
         Client?.UseInteractivity(new InteractivityConfiguration()
         {
             PollBehaviour = PollBehaviour.KeepEmojis,
+            PaginationEmojis = new PaginationEmojis(),
             Timeout = TimeSpan.FromMinutes(2)
         });
 
@@ -112,7 +113,7 @@ public class Bot
     {
         Commands = Client!.UseCommandsNext(config);
 
-        Commands.RegisterCommands(Assembly.GetAssembly(typeof(FunCommands))!);
+        Commands.RegisterCommands(Assembly.GetAssembly(typeof(Help))!);
     }
 
     private void RegisterSlashCommands()
