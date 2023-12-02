@@ -1,5 +1,5 @@
-![Lelya workflow](https://github.com/GuilhermeNono/LelyaBot/actions/workflows/dotnet-desktop.yml/badge.svg)
 # 📚LelyaBot📚
+![Lelya workflow](https://github.com/GuilhermeNono/LelyaBot/actions/workflows/dotnet-desktop.yml/badge.svg)
 ## 📖 Description 
 <p>Bot para servidores no discord desenvolvido em C#, .Net 8 e DSharpPlus.</p>
 
