@@ -10,7 +10,6 @@ jobs:
     build-docker: 
         runs-on: ubuntu-latest
         
-        steps: 
-            - name: build
+        steps:
             - uses: action/checkout@v2
             - run: docker build -t lelyabot .
