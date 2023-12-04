@@ -1,0 +1,15 @@
+name: Build Docker Image
+
+on:
+    push:
+        branchs: ["master"]
+    pull_request:
+        branchs: ["master"]
+ 
+jobs: 
+    build-docker: 
+        runs-on: ubuntu-latest
+        steps: 
+            - name: build
+            - uses: action/checkout@v2
+            - run: docker build -f Dockerfile --force-rm -t lelyabot .

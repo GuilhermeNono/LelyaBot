@@ -26,10 +26,6 @@ V
 a
 1Lelya.Infra/Core/EmbedPageable/PaginationEmoji.cs,5\6\56265a27f16126de6176756edc95f11b23b717fa
 \
-,Lelya.Infra/Core/EmbedPageable/IPageEmbed.cs,2\3\23a3aa29a3ed469a5451bc495439153b657a2c73
-[
-+Lelya.Infra/Core/EmbedPageable/PageEmbed.cs,b\2\b25ab58fe4b76bf2d4f315741d6cb40419264ae8
-\
 ,Lelya.Infra/Core/EmbedPageable/PageOption.cs,7\f\7fbc9c810d158e656fd190edb260bd694fa3d097
 ]
 -Lelya.Infra/Core/EmbedPageable/IPageOption.cs,2\6\26eb30ae5783ffc98d7e8ef4cb0d315f16969b0f
