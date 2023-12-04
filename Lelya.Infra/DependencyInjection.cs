@@ -1,4 +1,6 @@
-﻿using Lelya.Infra.Core.EmbedPageable;
+﻿using Lelya.Infra.Core.Pageable;
+using Lelya.Infra.Core.Pageable.Emoji;
+using Lelya.Infra.Core.Pageable.Page;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Lelya.Infra;

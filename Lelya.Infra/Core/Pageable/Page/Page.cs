@@ -1,6 +1,6 @@
 ﻿using DSharpPlus.Entities;
 
-namespace Lelya.Infra.Core.EmbedPageable;
+namespace Lelya.Infra.Core.Pageable.Page;
 
 public class Page
 {

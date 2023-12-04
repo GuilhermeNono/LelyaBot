@@ -1,6 +1,7 @@
 ﻿using DSharpPlus.Entities;
+using Lelya.Infra.Core.Pageable.Emoji;
 
-namespace Lelya.Infra.Core.EmbedPageable;
+namespace Lelya.Infra.Core.Pageable;
 
 public interface IPageableEmbed
 {

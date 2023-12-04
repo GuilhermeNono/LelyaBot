@@ -1,11 +1,13 @@
 ﻿using DSharpPlus.Entities;
+using Lelya.Infra.Core.Pageable.Emoji;
+using Lelya.Infra.Core.Pageable.Page;
 
-namespace Lelya.Infra.Core.EmbedPageable;
+namespace Lelya.Infra.Core.Pageable;
 
 public class PageableEmbed : IPageableEmbed
 {
     private IPageOption PageOption { get; set; }
-    private readonly List<Page> _pages = new();
+    private readonly List<Page.Page> _pages = new();
 
     public PageableEmbed(IPageOption pageOption)
     {
@@ -34,13 +36,13 @@ public class PageableEmbed : IPageableEmbed
 
     public DiscordEmoji GetPageEmoji(EPageEmoji emoji)
     {
-        return emoji == EPageEmoji.NEXT ? PageOption.NextEmoji() : PageOption.PreviousEmoji();
+        return emoji == EPageEmoji.Next ? PageOption.NextEmoji() : PageOption.PreviousEmoji();
     }
 
     public void AddEmbedContent(DiscordMessageBuilder embedToInclude)
     {
         PageOption.IncrementTotalPages();
-        _pages.Add(new Page(embedToInclude));
+        _pages.Add(new Page.Page(embedToInclude));
     }
 
     public void NextPage()
